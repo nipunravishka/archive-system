@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/items/all");
+      const response = await axios.get("https://archive-backend-three.vercel.app/api/items/all");
       setItems(response.data);
       setLoading(false);
     } catch (error) {
@@ -105,7 +105,7 @@ const Dashboard = () => {
     const confirmDelete = window.confirm(`ඔබට විශ්වාසද ${barcode} අංකය සහිත ලේඛනය මැකීමට අවශ්‍ය බව?`);
     if (confirmDelete) {
       try {
-        await axios.delete(`http://localhost:5000/api/items/delete/${id}`);
+        await axios.delete(`https://archive-backend-three.vercel.app/api/items/delete/${id}`);
         alert("සාර්ථකව මකා දැමුවා!");
         fetchItems(); 
       } catch (error) {

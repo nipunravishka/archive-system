@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = "http://localhost:5000/api/items";
+const API_URL = "https://archive-backend-three.vercel.app/api/items";
 
 const ItemRegistration = () => {
   const navigate = useNavigate();

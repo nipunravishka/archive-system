@@ -13,7 +13,7 @@ const UserList = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/users');
+      const res = await axios.get('https://archive-backend-three.vercel.app/api/auth/users');
       setUsers(Array.isArray(res.data) ? res.data : []);
       setLoading(false);
     } catch (err) {
@@ -25,7 +25,7 @@ const UserList = () => {
   const deleteUser = async (id, name) => {
     if (window.confirm(`${name || 'මෙම සේවකයාව'} පද්ධතියෙන් ඉවත් කිරීමට ඔබට සහතිකද?`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/auth/user/${id}`);
+        await axios.delete(`https://archive-backend-three.vercel.app/api/auth/user/${id}`);
         setUsers(users.filter(user => user._id !== id));
         alert("සාර්ථකව ඉවත් කළා!");
       } catch (err) {

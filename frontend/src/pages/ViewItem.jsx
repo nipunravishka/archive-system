@@ -10,7 +10,7 @@ const ViewItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/items/all`);
+        const response = await axios.get(`https://archive-backend-three.vercel.app/api/items/all`);
         const foundItem = response.data.find(i => i._id === id);
         setItem(foundItem);
       } catch (error) {

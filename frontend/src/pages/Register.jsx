@@ -31,7 +31,7 @@ const Register = () => {
         role: formData.role
       };
 
-      const res = await axios.post('http://localhost:5000/api/auth/add-user', payload);
+      const res = await axios.post('https://archive-backend-three.vercel.app/api/auth/add-user', payload);
       
       alert(res.data.msg || "Registration Successful!");
       navigate('/staff'); 
