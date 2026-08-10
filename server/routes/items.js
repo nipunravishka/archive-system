@@ -48,4 +48,14 @@ router.put('/update/:id', async (req, res) => {
     }
 });
 
+// ලේඛනයක් මකා දැමීම
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    await Item.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Item deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 module.exports = router;
